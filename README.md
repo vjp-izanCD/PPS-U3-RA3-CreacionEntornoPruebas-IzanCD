@@ -1,6 +1,6 @@
 # Creación del Entorno de Pruebas - Puesta en Producción Segura
 
-**Unidad 3 - RA5d | Autor: IzanCD**
+**Unidad 3 | Autor: Izan Correa Diaz**
 
 ---
 
@@ -24,6 +24,8 @@ Clonamos el repositorio del escenario LAMP multicontenedor:
 git clone https://github.com/sprintcube/docker-compose-lamp.git
 cd docker-compose-lamp
 ```
+
+![Captura 1](Captura01.png)
 
 ---
 
@@ -103,6 +105,8 @@ MYSQL_DATABASE=docker
 
 > **Nota de seguridad:** Cambiar puertos, contraseñas y nombres de usuario por defecto es esencial para mitigar vulnerabilidades de **Configuración Insegura** recogidas en el OWASP Top 10.
 
+![Captura 2](Captura02.png)
+
 ---
 
 ## 3. Guardar copia de la configuración original
@@ -113,6 +117,8 @@ Antes de levantar el escenario, creamos una copia de respaldo de la configuraci�
 mkdir configuracionOriginal
 cp -rp config data logs www configuracionOriginal
 ```
+
+![Captura 3](Captura03.png)
 
 ---
 
@@ -127,6 +133,8 @@ Accedemos al servidor web en el navegador:
 - HTTP: [http://localhost:8080](http://localhost:8080)
 - HTTPS: [https://localhost:8443](https://localhost:8443)
 - phpMyAdmin: [http://localhost:8181](http://localhost:8181)
+
+![Captura 4](Captura04.png)
 
 ---
 
@@ -162,6 +170,7 @@ Para reiniciar Apache dentro del contenedor web si es necesario:
 ```bash
 docker exec lamp-php83 /bin/bash -c "service apache2 restart"
 ```
+![Captura 5](Captura05.png)
 
 ---
 
@@ -208,12 +217,16 @@ cp -rp config data logs www "$1"
 echo "Configuración guardada correctamente en la carpeta $1"
 ```
 
+![Captura 6-1](Captura06-01.png)
+
 Dar permisos de ejecución y usar:
 
 ```bash
 chmod +x guardarConfiguraciones.sh
 ./guardarConfiguraciones.sh nombre-carpeta
 ```
+
+![Captura 6-2](Captura06-02.png)
 
 ### Script: restaurarConfiguracionOriginal.sh
 
@@ -250,12 +263,16 @@ cp -rp configuracionOriginal/config configuracionOriginal/data configuracionOrig
 echo "Configuración por defecto restaurada correctamente"
 ```
 
+![Captura 6-3](Captura06-03.png)
+
 Dar permisos de ejecución y usar:
 
 ```bash
 chmod +x restaurarConfiguracionOriginal.sh
 ./restaurarConfiguracionOriginal.sh
 ```
+
+![Captura 6-4](Captura06-04.png)
 
 ---
 
@@ -287,6 +304,8 @@ Contenido de ejemplo:
 </body>
 </html>
 ```
+
+![Captura 7-1](Captura07-01.png)
 
 Acceder en el navegador: [http://localhost:8080/misaludo.html](http://localhost:8080/misaludo.html)
 
