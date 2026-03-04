@@ -307,7 +307,9 @@ Contenido de ejemplo:
 
 ![Captura 7-1](Captura07-01.png)
 
-Acceder en el navegador: [http://localhost:8080/misaludo.html](http://localhost:8080/misaludo.html)
+Acceder en el navegador: [http://localhost:443/misaludo.html](http://localhost:443/misaludo.html)
+
+![Captura 7-2](Captura07-02.png)
 
 ---
 
